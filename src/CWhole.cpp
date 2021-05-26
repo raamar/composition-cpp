@@ -3,11 +3,17 @@
 CWhole::CWhole() {
   length = 0;
   storage = (CMatrix *) malloc(0);
+  if (!storage) exit(1);
+}
+
+CWhole::~CWhole() {
+  free(storage);
 }
 
 void CWhole::_add(CMatrix obj) {
   length++;
   storage = (CMatrix *) realloc(storage, sizeof(CMatrix) * length);
+  if (!storage) exit(1);
   storage[length - 1] = obj;
 }
 

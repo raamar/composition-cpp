@@ -8,6 +8,7 @@ class CWhole {
     void _add(CMatrix obj);
   public:
     CWhole();
+    ~CWhole();
     CMatrix * storage;
     void add(CMatrix obj);
     void add(CMatrix obj, int id);
