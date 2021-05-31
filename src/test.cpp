@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "include/CMatrix.h"
-#include "include/CWhole.h"
+#include "CMatrix.h"
+#include "CWhole.h"
 
 using namespace std;
 
