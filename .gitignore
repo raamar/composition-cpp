@@ -1,4 +1,6 @@
-/build
-/doc
+build
+doc
+.out
 .vscode
+.vs
 cmake-build-debug

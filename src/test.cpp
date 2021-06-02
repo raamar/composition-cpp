@@ -3,6 +3,12 @@
 #include "CMatrix.h"
 #include "CWhole.h"
 
+#ifdef _WIN32
+  #define CLEAR "cls"
+#else
+  #define CLEAR "clear"
+#endif
+
 using namespace std;
 
 void pause();
@@ -12,24 +18,24 @@ int main() {
   int choice = 0; 
 
   do {
-    system("clear");
-    cout << "Лабораторная работа №7 Хандрыга Р.В.\n";
-    cout << "1 - Добавить объект\n";
-    cout << "2 - Удалить объект по ID\n";
-    cout << "3 - Найти индекс объекта по ID\n";
-    cout << "4 - Показать состояние \n";
-    cout << "0 - Выход \n";
+    system(CLEAR);
+    cout << "Composition. 21 variant. Khandryga\n";
+    cout << "1 - Add object\n";
+    cout << "2 - Delete object by ID\n";
+    cout << "3 - Find index by ID\n";
+    cout << "4 - Show state \n";
+    cout << "0 - Exit \n";
     cout << "> ";
 
     cin >> choice;
 
     switch(choice) {
       case 1: {
-        system("clear");
+        system(CLEAR);
         int size = 0;
         int id = 0;
 
-        cout << "Введите размер матрицы: \n";
+        cout << "Enter matrix size: \n";
         cout << "> ";
         cin >> size;
         CMatrix m(size);
@@ -44,33 +50,33 @@ int main() {
           }
         }
 
-        cout << "Введите ID объекта или 0 для автозаполнения \n> ";
+        cout << "Enter new object ID or 0 for autofill\n> ";
         cin >> id;
 
         id ? test.add(m, id) : test.add(m);
       } break;
 
       case 2: {
-        system("clear");
+        system(CLEAR);
         int id = -1;
 
-        cout << "Введите ID объекта: \n > ";
+        cout << "Enter object ID:\n > ";
         cin >> id;
         test.remove(id);
       } break;
 
       case 3: {
-        system("clear");
+        system(CLEAR);
         int id = -1;
 
-        cout << "Введите ID объекта: \n > ";
+        cout << "Enter object ID:\n > ";
         cin >> id;
-        cout << "Объект с ID " << id << " имеет индекс " << test.getIndexById(id) << endl;
+        cout << "Object with ID " << id << " has index " << test.getIndexById(id) << endl;
         pause();
       } break;
 
       case 4: {
-        system("clear");
+        system(CLEAR);
         test.showInfo();
         pause();
       } break;
