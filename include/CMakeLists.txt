@@ -1,0 +1,6 @@
+
+set(HEADERS
+        ${CMAKE_CURRENT_SOURCE_DIR}/CMatrix.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/CWhole.h
+
+        PARENT_SCOPE)

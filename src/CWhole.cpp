@@ -1,4 +1,4 @@
-#include "../include/CWhole.h"
+#include "CWhole.h"
 
 CWhole::CWhole() {
   length = 0;
