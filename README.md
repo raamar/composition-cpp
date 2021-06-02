@@ -1,14 +1,11 @@
 # CPP COMPOSITION
 
-## Build
-
-```sh
-sh build.sh test
-```
+## Build / debug
 
 ```shell
-cmake -S ./ -B ./build
+mkdir build
 cd build
-make -j 4
+cmake ..
+cmake --build .
 ./composition_cpp
 ```
