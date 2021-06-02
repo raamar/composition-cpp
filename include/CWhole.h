@@ -10,8 +10,8 @@ class CWhole {
     CWhole();
     ~CWhole();
     CMatrix * storage;
-    void add(CMatrix obj);
-    void add(CMatrix obj, int id);
+    bool add(CMatrix obj);
+    bool add(CMatrix obj, int id);
     void remove(int id);
     int getIndexById(int id);
     void showInfo();

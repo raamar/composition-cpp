@@ -17,21 +17,20 @@ void CWhole::_add(CMatrix obj) {
   storage[length - 1] = obj;
 }
 
-void CWhole::add(CMatrix obj) {
+bool CWhole::add(CMatrix obj) {
   int id = 0;
   _add(obj);
   while(getIndexById(id) != -1) id++;
   storage[length - 1].setId(id);
+  return true;
 }
 
-void CWhole::add(CMatrix obj, int id) {
-  if (getIndexById(id) != -1) {
-    std::cout << "Объект с таким ID уже существует!\n";
-    return;
-  }
+bool CWhole::add(CMatrix obj, int id) {
+  if (getIndexById(id) != -1) return false;
 
   _add(obj);
   storage[length - 1].setId(id);
+  return true;
 }
 
 void CWhole::remove(int id) {

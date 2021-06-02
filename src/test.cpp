@@ -11,12 +11,13 @@
 
 using namespace std;
 
-void pause();
 int mainMenu();
 void addObjectTo(CWhole & storage);
 void deleteObjectTo(CWhole & storage);
 void findObjectTo(CWhole & storage);
 void showStateOf(CWhole & storage);
+void idExistsError();
+void pause();
 
 int main() {
   CWhole storage;
@@ -38,6 +39,7 @@ int main() {
 void addObjectTo(CWhole & storage) {
   int size = 0;
   int id = 0;
+  bool result = false;
 
   system(CLEAR);
   cout << "Enter matrix size:\n> ";
@@ -59,7 +61,13 @@ void addObjectTo(CWhole & storage) {
   cout << "Enter new object ID or 0 for autofill\n> ";
   cin >> id;
 
-  id ? storage.add(m, id) : storage.add(m);
+  result = id ? storage.add(m, id) : storage.add(m);
+  !result ? idExistsError(), addObjectTo(storage) : void(0);
+}
+
+void idExistsError() {
+  cout << "Object with those ID already exists!\n";
+  pause();
 }
 
 void deleteObjectTo(CWhole & storage) {
